@@ -269,6 +269,9 @@ public class SocialShareUtil {
                 .setHashtag(text)
                 .build())
             .build();
+        if (ShareDialog.canShow(ShareLinkContent.class)) {
+            shareDialog.show(content);
+        }
         
         /*List<SharePhoto> sharePhotos = new ArrayList<>();
         for (int i = 0; i < filePaths.size(); i++) {
