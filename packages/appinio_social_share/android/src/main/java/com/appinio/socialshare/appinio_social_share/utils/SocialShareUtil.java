@@ -261,7 +261,15 @@ public class SocialShareUtil {
                 result.success(error.getLocalizedMessage());
             }
         });
-        List<SharePhoto> sharePhotos = new ArrayList<>();
+
+        ShareLinkContent content = new ShareLinkContent.Builder()
+            .setContentUrl(Uri.parse("https://developers.facebook.com"))
+            .setShareHashtag(new ShareHashtag.Builder()
+                .setHashtag(text)
+                .build());
+            .build();
+        
+        /*List<SharePhoto> sharePhotos = new ArrayList<>();
         for (int i = 0; i < filePaths.size(); i++) {
             Uri fileUri = FileProvider.getUriForFile(activity, activity.getPackageName() + ".provider", new File(filePaths.get(i)));
             sharePhotos.add(new SharePhoto.Builder().setImageUrl(fileUri).build());
@@ -272,7 +280,7 @@ public class SocialShareUtil {
                 .build();
         if (ShareDialog.canShow(SharePhotoContent.class)) {
             shareDialog.show(content);
-        }
+        }*/
     }
 
     public String shareToFaceBookStory(String appId, String stickerImage, String backgroundImage, String backgroundTopColor, String backgroundBottomColor, String attributionURL, Context activity) {
