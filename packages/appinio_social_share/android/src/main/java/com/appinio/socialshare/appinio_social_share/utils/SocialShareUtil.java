@@ -266,7 +266,7 @@ public class SocialShareUtil {
             .setContentUrl(Uri.parse("https://developers.facebook.com"))
             .setShareHashtag(new ShareHashtag.Builder()
                 .setHashtag(text)
-                .build());
+                .build())
             .build();
         
         /*List<SharePhoto> sharePhotos = new ArrayList<>();
