@@ -294,15 +294,10 @@ public class ShareUtil{
     func shareToFacebookPost(args : [String: Any?],result: @escaping FlutterResult, delegate: SharingDelegate) {
         let message = args[self.argMessage] as? String
         let imagePaths = args[self.argImagePaths] as? [String]
-        
-        let content = SharePhotoContent()
-        var photos : [SharePhoto] = []
-        for image in imagePaths! {
-            let photo = SharePhoto(image: UIImage.init(contentsOfFile: image)!, isUserGenerated: true)
-            photos.append(photo)
-        }
-        content.photos = photos
+
+        let content = ShareLinkContent()
         content.hashtag = Hashtag(message!)
+        
         let dialog = ShareDialog(
             viewController: UIApplication.shared.windows.first!.rootViewController,
             content: content,
