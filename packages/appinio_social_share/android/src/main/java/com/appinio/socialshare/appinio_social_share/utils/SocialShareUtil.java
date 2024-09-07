@@ -264,7 +264,6 @@ public class SocialShareUtil {
         });
 
         ShareLinkContent content = new ShareLinkContent.Builder()
-            .setContentUrl(Uri.parse("https://developers.facebook.com"))
             .setShareHashtag(new ShareHashtag.Builder()
                 .setHashtag(text)
                 .build())
