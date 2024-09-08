@@ -296,7 +296,7 @@ public class ShareUtil{
         let imagePaths = args[self.argImagePaths] as? [String]
 
         let content = ShareLinkContent()
-        content.hashtag = Hashtag(message!)
+        content.hashtag = message!
         
         let dialog = ShareDialog(
             viewController: UIApplication.shared.windows.first!.rootViewController,
